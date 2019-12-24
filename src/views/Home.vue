@@ -116,6 +116,7 @@ export default {
   margin: .6em auto !important;
   width: 75%;
   font-size: 25px;
+  text-align: left;
 }
 
 .graph-event {
@@ -160,6 +161,7 @@ export default {
   .app-title {
     width: 100%;
     font-size: 23px;
+    text-align: center;
   }
 
   .event-notification {
