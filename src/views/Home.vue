@@ -4,10 +4,10 @@
 
     <section class="" v-else>
       <div class="header">
-        <h3 class="xheading app-title">
+        <div class="app-title">
           <img src="/unilorin.png" />
-          {{ $store.getters.appTitle }}
-        </h3>
+          <h2 class="xheading">{{ $store.getters.appTitle }}</h2>
+        </div>
         <section class="columns graph-event">
           <!-- <h4 class="xheading is-size-4">Power-Time</h4> -->
           <div>
@@ -117,7 +117,8 @@ export default {
   margin: .6em auto !important;
   width: 75%;
   font-size: 25px;
-  text-align: left;
+  display: flex;
+  align-items: center;
 
   img {
     height: 70px;
@@ -154,7 +155,7 @@ export default {
   margin-bottom: 15px;
   background: rgba(0,0,0,0.13);
 
-  > h3 {
+  > h3, h2 {
     margin: 0;
     color: #ff9f41;
   }
@@ -167,8 +168,14 @@ export default {
 
   .app-title {
     width: 100%;
-    font-size: 23px;
-    text-align: center;
+    font-size: 16px;
+    text-align: left;
+
+    img {
+      height: 40px;
+      display: block;
+      text-align: center;
+    }
   }
 
   .event-notification {
