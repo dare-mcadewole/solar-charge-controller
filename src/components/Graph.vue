@@ -17,7 +17,9 @@ export default {
             target: '#pt-chart', // the html element that the graphic is inserted in
             x_accessor: 'time',  // the key that accesses the x value
             y_accessor: 'power', // the key that accesses the y value
-            area: true
+            area: true,
+            x_label: 'Time',
+            y_label: 'Power'
         })
     },
     data () {
@@ -87,7 +89,7 @@ path.mg-main-line {
     fill: #fff;
     font-size: 13px;
     font-weight: bold;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 text {
     fill: #FFF;

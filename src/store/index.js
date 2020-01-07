@@ -5,6 +5,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    appTitle: 'Unilorin Solar PV Plant Web-based Monitoring System'
+  },
+  getters: {
+    appTitle: state => state.appTitle
   },
   mutations: {
   },

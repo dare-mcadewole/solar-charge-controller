@@ -5,7 +5,8 @@
     <section class="" v-else>
       <div class="header">
         <h3 class="xheading app-title">
-          Solar Charge Controller
+          <img src="/unilorin.png" />
+          {{ $store.getters.appTitle }}
         </h3>
         <section class="columns graph-event">
           <!-- <h4 class="xheading is-size-4">Power-Time</h4> -->
@@ -20,17 +21,17 @@
           <Card
             icon="sun"
             name="Solar Irradiance"
-            value="100w/m2"
+            value="100 W/&#13217;"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
             icon="power"
             name="Exporting"
-            value="100W"
+            value="100 W"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
             icon="power-now"
             name="Current Usage"
-            value="12W"
+            value="12 W"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
         </section>
 
@@ -38,7 +39,7 @@
             <Card
               icon="temperature"
               name="Temperature"
-              value="42C"
+              value="42&#176;C"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
             <Card
               icon="humidity"
@@ -117,6 +118,12 @@ export default {
   width: 75%;
   font-size: 25px;
   text-align: left;
+
+  img {
+    height: 70px;
+    vertical-align: middle;
+    margin-right: .7em;
+  }
 }
 
 .graph-event {

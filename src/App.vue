@@ -25,6 +25,7 @@ body {
   // width: 70%;
   margin: auto;
   color: #FFF;
+  margin-bottom: 3em;
 }
 
 .xheading {

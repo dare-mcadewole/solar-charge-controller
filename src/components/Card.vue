@@ -3,8 +3,7 @@
         <div class="">
             <div class="image-value">
                 <img :src="`/${icon}.png`" height="50px" />
-                <div class="xheading is-size-4 has-text-">
-                    {{ value }}
+                <div class="xheading is-size-4 has-text-" v-html="value">
                 </div>
             </div>
             <div class="card-name has-text- is-uppercase xheading has-text-weight-bold">
@@ -28,13 +27,18 @@ export default {
 
 <style lang="scss" scoped>
 $border: 2px solid #7957D5;
+$yellow: #ff9f41;
+$cool-purple: #7957D5;
+$dark-bg: #523b93;
+
 .sc-card > div {
     border-radius: 4px;
     padding: 1.5em;
     // box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     // background-color: rgba(0,0,0,0.04);
-    background-color: #523b93;
+    background-color: rgba(255, 255, 255, 0.93);
     // transform: rotateZ(-1deg);
+    color: #000;
 }
 
 .image-value {

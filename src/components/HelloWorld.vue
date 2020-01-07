@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
-    <h1 class="xheading is-size-2 is-capitalized">
-      Solar Charge Controller
+    <img src="/unilorin.png" />
+    <h1 class="xheading is-size-4 is-capitalized">
+      {{ $store.getters.appTitle }}
     </h1>
     <section>
       <b-progress size="is-small" type="is-danger"></b-progress>
@@ -35,6 +36,10 @@ export default {
   flex-direction: column;
   height: 100vh;
   width: 100%;
+
+  img {
+    height: 120px;
+  }
 }
 
 h1 {
