@@ -7,19 +7,20 @@ import MG from 'metrics-graphics'
 export default {
     name: 'graph',
     mounted () {
-        var width = window.innerWidth * 0.7
+        var width = window.innerWidth * 0.75
         MG.data_graphic({
             title: 'Power-Time Chart',
             // description: 'This graphics shows real-time Power Consumption',
             data: this.dataset, // an array of objects, such as [{value:100,date:...},...]
+            chart_type: 'line',
             width,
             height: 250,
             target: '#pt-chart', // the html element that the graphic is inserted in
             x_accessor: 'time',  // the key that accesses the x value
             y_accessor: 'power', // the key that accesses the y value
-            area: true,
-            x_label: 'Time',
-            y_label: 'Power'
+            // area: true,
+            x_label: 'Time (hr)',
+            y_label: 'Power (kW)'
         })
     },
     data () {
@@ -65,7 +66,12 @@ export default {
 
 <style lang="scss">
 #pt-chart {
-    margin: auto;
+    margin: 0 auto 1em;
+    background-color: #222;
+    border-radius: 5px;
+    border: 1px solid #444;
+    padding: 1em;
+
 }
 .mg-chart-title {
     fill: #fff;
@@ -78,11 +84,11 @@ export default {
 path.mg-main-line {
     fill: none;
     opacity: 0.8;
-    stroke-width: 2px;
+    stroke-width: 1.5px;
 }
 
 .mg-area1-color {
-    fill: rgba(0,0,0,0.2);
+    fill: rgba(0,0,0,0.0);
 }
 
 .mg-x-axis text, .mg-y-axis text {
@@ -91,7 +97,13 @@ path.mg-main-line {
     font-weight: bold;
     opacity: 0.7;
 }
+
+.mg-x-axis line, .mg-y-axis line {
+    stroke: #666;
+}
+
 text {
     fill: #FFF;
+    font-family: 'Google Sans';
 }
 </style>

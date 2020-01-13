@@ -37,8 +37,9 @@ $dark-bg: #523b93;
     // box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     // background-color: rgba(0,0,0,0.04);
     background-color: rgba(255, 255, 255, 0.93);
+    background-color: #222;
     // transform: rotateZ(-1deg);
-    color: #000;
+    color: #FFF;
 }
 
 .image-value {
