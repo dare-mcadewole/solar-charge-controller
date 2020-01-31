@@ -4,8 +4,9 @@
     <footer>
       <p>
        Developed by Advanced Power and Green Energy Research group, Department of Electrical &amp;
-       Electronics, University of Ilorin, Ilorin, Nigeria
+       Electronics Engineering, University of Ilorin, Ilorin, Nigeria
       </p>
+      <p align="center">Project Funded by Engr. Tunde Y. Salihu</p>
     </footer>
   </div>
 </template>
@@ -49,7 +50,7 @@ body {
 footer {
   margin-top: 3em;
   font-family: 'Google Sans' !important;
-  color: #AAA;
+  color: #CCC;
   font-size: 14px;
 }
 </style>
