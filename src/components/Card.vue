@@ -34,10 +34,10 @@ $dark-bg: #523b93;
 .sc-card > div {
     border-radius: 4px;
     padding: 1.5em;
-    // box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    box-shadow: 0 1px 5px rgba(36, 26, 26, 0.3);
     // background-color: rgba(0,0,0,0.04);
-    background-color: rgba(255, 255, 255, 0.93);
-    background-color: #222;
+    // background-color: rgba(255, 255, 255, 0.93);
+    background-color: darken($dark-bg, 3);
     // transform: rotateZ(-1deg);
     color: #FFF;
 }

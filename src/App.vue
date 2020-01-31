@@ -15,8 +15,8 @@ html {
   // background-color: #f9fbfc !important;
   // background-color: #6943d0 !important;
   // background-color: #1a1f42 !important;
-  // background: #563e99 !important;
-  background: #333 !important;
+  background: #563e99 !important;
+  // background: #333 !important;
   margin: 0;
 }
 

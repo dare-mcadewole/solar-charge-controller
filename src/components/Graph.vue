@@ -20,45 +20,32 @@ export default {
             y_accessor: 'power', // the key that accesses the y value
             // area: true,
             x_label: 'Time (hr)',
-            y_label: 'Power (kW)'
+            y_label: 'Power (kW)',
+            max_x: 24, // Maximum value on the x-axis
+            // xax_units: 'hr',
+            xax_count: 24,
+            yax_units_append: true,
+            xax_format: (val) => `${val}:00`,
+            yax_format: (val) => `${val}`
+            // yax_units: 'kW'
         })
     },
+
     data () {
         return {
-            dataset: [
-                {
-                    power: 0,
-                    time: 1
-                },
-                {
-                    power: 3,
-                    time: 2
-                },
-                {
-                    power: 5,
-                    time: 3
-                },
-                {
-                    power: 20,
-                    time: 4
-                },
-                {
-                    power: 13,
-                    time: 5
-                },
-                {
-                    power: 20,
-                    time: 6
-                },
-                {
-                    power: 3,
-                    time: 7
-                },
-                {
-                    power: 0,
-                    time: 8
-                }
-            ],
+        }
+    },
+
+    computed: {
+        dataset () {
+            var dataset = []
+            for (var time = 0; time <= 24; time += 1) {
+                dataset.push({
+                    power: Math.round(Math.random() * 30),
+                    time
+                })
+            }
+            return dataset
         }
     }
 }
@@ -67,7 +54,7 @@ export default {
 <style lang="scss">
 #pt-chart {
     margin: 0 auto 1em;
-    background-color: #222;
+    background-color: #333;
     border-radius: 5px;
     border: 1px solid #444;
     padding: 1em;
