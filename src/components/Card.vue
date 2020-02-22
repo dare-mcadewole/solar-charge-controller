@@ -3,7 +3,7 @@
         <div class="">
             <div class="image-value">
                 <img :src="`/${icon}.png`" height="50px" />
-                <div class="xheading is-size-4 has-text-" v-html="value">
+                <div class="xheading is-size-4 has-text- is-capitalized" v-html="value">
                 </div>
             </div>
             <div class="card-name has-text- is-uppercase xheading has-text-weight-bold">

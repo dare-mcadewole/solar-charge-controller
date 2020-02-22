@@ -21,17 +21,17 @@
           <Card
             icon="sun"
             name="Solar Irradiance"
-            value="100 W/&#13217;"
+            :value="`${component.solar_irradiance} W/㎡`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
             icon="power"
             name="Exporting"
-            value="100 W"
+            :value="`${component.exporting} W`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
             icon="power-now"
             name="Current Usage"
-            value="12 W"
+            :value="`${component.current_usage} W`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
         </section>
 
@@ -39,17 +39,17 @@
             <Card
               icon="temperature"
               name="Temperature"
-              value="42&#176;C"
+              :value="`${component.temperature}°C`"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
             <Card
               icon="humidity"
               name="Humidity"
-              value="98%"
+              :value="`${component.humidity}%`"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
             <Card
               icon="battery"
               name="Depth of discharge"
-              value="98%"
+              :value="`${component.depth_of_discharge}%`"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
         </section>
 
@@ -57,17 +57,17 @@
             <Card
               icon="load"
               name="Load"
-              value="24V/2A"
+              :value="`${component.load}`"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
             <Card
               icon="battery-status"
               name="Battery Status"
-              value="Charging"
+              :value="`${component.battery_status}`"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
             <Card
               icon="device"
               name="Module ID"
-              value="MPPT_4567"
+              :value="component.module_id"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
         </section>
       </div>
@@ -98,11 +98,27 @@ export default {
   name: 'home',
   mounted() {
     setTimeout(() => this.loading = false, this.loadTime)
+
+    // Bind component update event to channel
+    this.$channel.bind('component-update', (data) => {
+      this.component[data.component] = data.value
+    })
   },
   data () {
     return {
       loadTime: 3500,
-      loading: true
+      loading: true,
+      component: {
+        solar_irradiance: 100,
+        exporting: 100,
+        current_usage: 12,
+        temperature: 42,
+        humidity: 98,
+        depth_of_discharge: 98,
+        load: '24V/2A',
+        battery_status: 'charging',
+        module_id: 'MPPT_4567'
+      }
     }
   },
   components: {
