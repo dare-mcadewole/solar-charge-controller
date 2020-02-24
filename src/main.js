@@ -14,14 +14,14 @@ const pusher = new Pusher('6ceca9c4f42a96f30023', {
   cluster: 'eu'
 })
 pusher.connection.bind('connected', () => {
-  console.log('Connected to real-time server!')
+  alert('Connected to real-time server!')
 })
 pusher.connection.bind('disconnected', () => {
-  console.log('Disconnected from real-time server!')
+  alert('Disconnected from real-time server!')
 })
 pusher.connection.bind('error', (err) => {
   if (err.error.data.code === 4004) {
-    console.log('Overlimit')
+    alert('Overlimit')
   }
 })
 const channel = pusher.subscribe('solar-charge-controller')
