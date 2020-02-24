@@ -8,8 +8,8 @@
           <img src="/unilorin.png" />
           <h2 class="xheading">{{ $store.getters.appTitle }}</h2>
         </div>
+        <h4 class="xheading is-size-5">Power-Time Graph</h4>
         <section class="columns graph-event">
-          <h4 class="xheading is-size-4">Power-Time Graph</h4>
           <div>
             <LineGraph />
           </div>
