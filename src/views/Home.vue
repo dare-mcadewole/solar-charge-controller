@@ -9,9 +9,9 @@
           <h2 class="xheading">{{ $store.getters.appTitle }}</h2>
         </div>
         <section class="columns graph-event">
-          <!-- <h4 class="xheading is-size-4">Power-Time</h4> -->
+          <h4 class="xheading is-size-4">Power-Time Graph</h4>
           <div>
-            <Graph />
+            <LineGraph />
           </div>
         </section>
       </div>
@@ -92,39 +92,46 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import Card from '@/components/Card.vue'
-import Graph from '@/components/Graph.vue'
+import LineGraph from '@/components/LineGraph.vue'
 
 export default {
   name: 'home',
+
   mounted() {
-    setTimeout(() => this.loading = false, this.loadTime)
+    fetch(`${this.$API_URL}/components`)
+    .then(res => res.json())
+    .then((components) => {
+      this.component = components
+      this.loading = false
+    }).catch(console.warn)
 
     // Bind component update event to channel
     this.$channel.bind('component-update', (data) => {
-      this.component[data.component] = data.value
+      this.component = data
     })
   },
+
   data () {
     return {
-      loadTime: 3500,
       loading: true,
       component: {
-        solar_irradiance: 100,
-        exporting: 100,
-        current_usage: 12,
-        temperature: 42,
-        humidity: 98,
-        depth_of_discharge: 98,
-        load: '24V/2A',
-        battery_status: 'charging',
-        module_id: 'MPPT_4567'
+        solar_irradiance: 0,
+        exporting: 0,
+        current_usage: 0,
+        temperature: 0,
+        humidity: 0,
+        depth_of_discharge: 0,
+        load: '0V/0A',
+        battery_status: 'N/A',
+        module_id: '-'
       }
     }
   },
+
   components: {
     HelloWorld,
     Card,
-    Graph
+    LineGraph
   }
 }
 </script>

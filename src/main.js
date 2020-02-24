@@ -14,18 +14,20 @@ const pusher = new Pusher('6ceca9c4f42a96f30023', {
   cluster: 'eu'
 })
 pusher.connection.bind('connected', () => {
-  alert('Connected!')
+  console.log('Connected to real-time server!')
 })
 pusher.connection.bind('disconnected', () => {
-  alert('Disconnected!')
+  console.log('Disconnected from real-time server!')
 })
 pusher.connection.bind('error', (err) => {
   if (err.error.data.code === 4004) {
-    alert('Overlimit')
+    console.log('Overlimit')
   }
 })
 const channel = pusher.subscribe('solar-charge-controller')
 Vue.prototype.$channel = channel
+// Vue.prototype.$API_URL = 'http://localhost:5000/api'
+Vue.prototype.$API_URL = 'https://solarchargecontroller.herokuapp.com/api'
 
 new Vue({
   router,

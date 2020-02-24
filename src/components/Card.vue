@@ -32,9 +32,9 @@ $cool-purple: #7957D5;
 $dark-bg: #523b93;
 
 .sc-card > div {
-    border-radius: 4px;
+    border-radius: 14px;
     padding: 1.5em;
-    box-shadow: 0 1px 5px rgba(36, 26, 26, 0.3);
+    box-shadow: 0 1px 15px rgba(36, 26, 26, 0.13);
     // background-color: rgba(0,0,0,0.04);
     // background-color: rgba(255, 255, 255, 0.93);
     background-color: darken($dark-bg, 3);
