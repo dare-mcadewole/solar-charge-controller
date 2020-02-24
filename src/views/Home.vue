@@ -103,7 +103,7 @@ export default {
     .then((components) => {
       this.component = components
       this.loading = false
-    }).catch(console.warn)
+    })
 
     // Bind component update event to channel
     this.$channel.bind('component-update', (data) => {
