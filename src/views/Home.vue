@@ -21,17 +21,17 @@
           <Card
             icon="sun"
             name="Solar Irradiance"
-            :value="`${component.solar_irradiance} W/㎡`"
+            :value="`${component.si} W/㎡`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
             icon="power"
             name="Exporting"
-            :value="`${component.exporting} W`"
+            :value="`${component.e} W`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
             icon="power-now"
             name="Current Usage"
-            :value="`${component.current_usage} W`"
+            :value="`${component.cu} W`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
         </section>
 
@@ -39,17 +39,17 @@
             <Card
               icon="temperature"
               name="Temperature"
-              :value="`${component.temperature}°C`"
+              :value="`${component.t}°C`"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
             <Card
               icon="humidity"
               name="Humidity"
-              :value="`${component.humidity}%`"
+              :value="`${component.h}%`"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
             <Card
               icon="battery"
               name="Depth of discharge"
-              :value="`${component.depth_of_discharge}%`"
+              :value="`${component.dod}%`"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
         </section>
 
@@ -57,17 +57,17 @@
             <Card
               icon="load"
               name="Load"
-              :value="`${component.load}`"
+              :value="`${component.l}`"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
             <Card
               icon="battery-status"
               name="Battery Status"
-              :value="`${component.battery_status}`"
+              :value="`${component.bs}`"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
             <Card
               icon="device"
               name="Module ID"
-              :value="component.module_id"
+              :value="component.mi"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
         </section>
       </div>
@@ -106,8 +106,13 @@ export default {
     })
 
     // Bind component update event to channel
-    this.$channel.bind('component-update', (data) => {
+    this.$channel.bind('components-update', (data) => {
       this.component = data
+    })
+
+    // Bind component update event to channel
+    this.$channel.bind('component-update', (data) => {
+      this.component[data.component] = data.value
     })
   },
 
