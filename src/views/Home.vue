@@ -101,13 +101,19 @@ export default {
     fetch(`${this.$API_URL}/components`)
     .then(res => res.json())
     .then((components) => {
-      this.component = components
+      if (components.si) {
+        this.component = components
+      } else {
+        alert('Could not get current state of components')
+      }
       this.loading = false
     })
 
     // Bind component update event to channel
     this.$channel.bind('components-update', (data) => {
+      // Go ahead and update this.component
       this.component = data
+      // Object.assign(this.component, data)
     })
 
     // Bind component update event to channel
@@ -120,15 +126,15 @@ export default {
     return {
       loading: true,
       component: {
-        solar_irradiance: 0,
-        exporting: 0,
-        current_usage: 0,
-        temperature: 0,
-        humidity: 0,
-        depth_of_discharge: 0,
-        load: '0V/0A',
-        battery_status: 'N/A',
-        module_id: '-'
+        si: 0,
+        e: 0,
+        cu: 0,
+        t: 0,
+        h: 0,
+        dod: 0,
+        l: '0V/0A',
+        bs: 'N/A',
+        mi: '-'
       }
     }
   },
