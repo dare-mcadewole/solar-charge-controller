@@ -118,7 +118,7 @@ export default {
 
     // Bind component update event to channel
     this.$channel.bind('component-update', (data) => {
-      this.component[data.component] = data.value
+      this.component[data.component] = data.value | 'N/A'
     })
   },
 

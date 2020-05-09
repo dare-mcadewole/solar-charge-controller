@@ -71,7 +71,7 @@ export default {
                 hideHover: true,
                 parseTime: false,
                 xLabels: 'hour',
-                postUnits: 'kW',
+                // postUnits: 'kW',
                 // resize: true,
                 // grid: false,
                 lineColors: [ '#4b3685', '#FFF' ],
@@ -102,9 +102,9 @@ export default {
     }
 
     &:before {
-        content: "Power";
+        content: "Power (kW)";
         position: absolute;
-        left: 0px;
+        left: -15px;
         top: 45%;
         letter-spacing: 0.7px;
         transform: rotate(-90deg);

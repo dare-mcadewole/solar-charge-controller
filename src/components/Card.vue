@@ -1,17 +1,19 @@
 <template>
     <div class="sc-card column is-full-mobile">
-        <div class="">
+        <div class="columns">
             <div class="image-value">
                 <img :src="`/${icon}.png`" height="50px" />
-                <div class="xheading is-size-4 has-text- is-capitalized" v-html="value">
+            </div>
+            <div class="">
+                <h1 class="card-name xheading">
+                    {{ name }}
+                </h1>
+                <div class="xheading is-size-4 is-capitalized" v-html="value">
                 </div>
             </div>
-            <div class="card-name has-text- is-uppercase xheading has-text-weight-bold">
-                {{ name }}
-            </div>
-            <div class="is-size-7">
+            <!-- <div class="is-size-7">
                 {{ description }}
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -34,6 +36,7 @@ $dark-bg: #523b93;
 .sc-card > div {
     border-radius: 14px;
     padding: 1.5em;
+    margin: .13rem;
     box-shadow: 0 1px 15px rgba(36, 26, 26, 0.13);
     // background-color: rgba(0,0,0,0.04);
     // background-color: rgba(255, 255, 255, 0.93);
@@ -44,15 +47,20 @@ $dark-bg: #523b93;
 
 .image-value {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    margin-right: 1rem !important;
+}
+
+.xheading {
+    margin: 0;
 }
 
 .card-name {
     letter-spacing: 0.5px;
-    margin-top: 1.2em;
+    margin-bottom: 0;
     color: #ff9f41;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 img {
