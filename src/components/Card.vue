@@ -2,7 +2,7 @@
     <div class="sc-card column is-full-mobile">
         <div class="columns">
             <div class="image-value">
-                <img :src="`/${icon}.png`" height="50px" />
+                <img :src="`/${icon}`" height="50px" />
             </div>
             <div class="data">
                 <h1 class="card-name xheading">

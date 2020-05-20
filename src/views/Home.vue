@@ -21,35 +21,35 @@
       <div class="data-section">
         <section class="columns has-text-left">
           <Card
-            icon="power-now"
+            icon="power-now.png"
             name="PV Power"
             :value="`${component.cu} kW`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
-            icon="energy"
+            icon="energy.png"
             name="PV Energy"
             :value="`${component.mi} kWh`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
-            icon="power"
-            name="Power to Grid"
+            icon="house.jpg"
+            name="Load Power"
             :value="`${component.e} kW`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
         </section>
 
         <section class="columns has-text-left">
           <Card
-            icon="battery-status"
-            name="Battery Voltage / CHG Current"
+            icon="battery-status.png"
+            name="Voltage / CHG Current"
             :value="`${component.l}`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
             <Card
-              icon="battery"
+              icon="battery.png"
               name="Depth of Discharge"
               :value="`${component.dod}%`"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
             <Card
-              icon="battery-status"
+              icon="battery-status.png"
               name="Charging Status"
               :value="`${component.bs}`"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
@@ -57,17 +57,17 @@
 
         <section class="columns has-text-left">
           <Card
-            icon="temperature"
+            icon="temperature.png"
             name="Temperature"
             :value="`${component.t}°C`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
-            icon="humidity"
+            icon="humidity.png"
             name="Humidity"
             :value="`${component.h}%`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
-            icon="sun"
+            icon="sun.png"
             name="Solar Irradiance"
             :value="`${component.si} W/㎡`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
