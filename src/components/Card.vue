@@ -4,7 +4,7 @@
             <div class="image-value">
                 <img :src="`/${icon}.png`" height="50px" />
             </div>
-            <div class="">
+            <div class="data">
                 <h1 class="card-name xheading">
                     {{ name }}
                 </h1>
@@ -43,6 +43,7 @@ $dark-bg: #523b93;
     background-color: darken($dark-bg, 3);
     // transform: rotateZ(-1deg);
     color: #FFF;
+    min-height: 9em;
 }
 
 .image-value {
@@ -60,11 +61,18 @@ $dark-bg: #523b93;
     letter-spacing: 0.5px;
     margin-bottom: 0;
     color: #ff9f41;
-    font-size: 20px;
+    font-size: 18px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 img {
-    height: 55px !important;
+    height: 50px !important;
     // margin-bottom: 1em;
     vertical-align: middle;
 }

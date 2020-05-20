@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div id="line-graph">
+    <div class="line-graph-container">
+        <div id="line-graph" style="width: 1100px;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
         </div>
     </div>
 </template>
@@ -11,6 +11,8 @@ export default {
         this.setupPowerLiveFeed()
         this.powerDataSet = await this.getPower()
         var width = window.innerWidth * 0.9
+        // Normalize chart width
+        width = width > 1100 ? 1100 : width
         document.querySelector('#line-graph').style.width = `${width}px`
         this.updateGraph()
     },
@@ -88,6 +90,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.line-graph-container {
+}
+
 #line-graph {
     width: 100%;
     min-height: 300px;

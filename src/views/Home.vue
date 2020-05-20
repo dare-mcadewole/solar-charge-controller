@@ -8,7 +8,9 @@
           <img src="/unilorin.png" />
           <h2 class="xheading">{{ $store.getters.appTitle }}</h2>
         </div>
-        <h4 class="xheading is-size-5">Power-Time Graph</h4>
+        <h4 class="xheading is-size-5">
+          <span>Power-Time Graph</span>
+        </h4>
         <section class="columns graph-event">
           <div>
             <LineGraph />
@@ -19,56 +21,56 @@
       <div class="data-section">
         <section class="columns has-text-left">
           <Card
+            icon="power-now"
+            name="PV Power"
+            :value="`${component.cu} kW`"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+          <Card
+            icon="battery"
+            name="Battery Voltage / CHG Current"
+            :value="`${component.l} kW`"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+          <Card
+            icon="power"
+            name="Power to Grid"
+            :value="`${component.e} kW`"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+        </section>
+
+        <section class="columns has-text-left">
+            <Card
+              icon="energy"
+              name="PV Energy"
+              :value="`${component.mi} kWh`"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+            <Card
+              icon="battery"
+              name="Depth of Discharge"
+              :value="`${component.dod}%`"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+            <Card
+              icon="battery-status"
+              name="Charging Status"
+              :value="`${component.bs}`"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+        </section>
+
+        <section class="columns has-text-left">
+          <Card
+            icon="temperature"
+            name="Temperature"
+            :value="`${component.t}°C`"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+          <Card
+            icon="humidity"
+            name="Humidity"
+            :value="`${component.h}%`"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+          <Card
             icon="sun"
             name="Solar Irradiance"
             :value="`${component.si} W/㎡`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
-          <Card
-            icon="power"
-            name="Exporting"
-            :value="`${component.e} W`"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
-          <Card
-            icon="power-now"
-            name="Current Usage"
-            :value="`${component.cu} W`"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
-        </section>
-
-        <section class="columns has-text-left">
-            <Card
-              icon="temperature"
-              name="Temperature"
-              :value="`${component.t}°C`"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
-            <Card
-              icon="humidity"
-              name="Humidity"
-              :value="`${component.h}%`"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
-            <Card
-              icon="battery"
-              name="Depth of discharge"
-              :value="`${component.dod}%`"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
-        </section>
-
-        <section class="columns has-text-left">
-            <Card
-              icon="load"
-              name="Load"
-              :value="`${component.l}`"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
-            <Card
-              icon="battery-status"
-              name="Battery Status"
-              :value="`${component.bs}`"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
-            <Card
-              icon="device"
-              name="Module ID"
-              :value="component.mi"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
         </section>
       </div>
       
@@ -148,7 +150,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .app-title {
-  margin: .6em auto !important;
+  margin: .6em auto 1.5em !important;
   width: 75%;
   font-size: 25px;
   display: flex;
@@ -162,6 +164,8 @@ export default {
 }
 
 .graph-event {
+    // max-width: 1100px;
+    // margin: auto;
   // border-top: 1px dashed #DADADA;
   margin-top: 12px;
   padding-top: 20px;
@@ -179,7 +183,7 @@ export default {
 }
 
 .data-section {
-  width: 75%;
+  max-width: 1100px;
   margin: auto;
   margin-top: -60px;
 }
@@ -193,6 +197,12 @@ export default {
     margin: 0;
     color: #ff9f41;
   }
+}
+
+h4 > span {
+  padding: .5em 1em;
+  background-color: #523b93;
+  border-radius: 2em;
 }
 
 @media screen and (max-width: 360px) {
