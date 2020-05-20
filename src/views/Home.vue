@@ -26,9 +26,9 @@
             :value="`${component.cu} kW`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
-            icon="battery-status"
-            name="Battery Voltage / CHG Current"
-            :value="`${component.l}`"
+            icon="energy"
+            name="PV Energy"
+            :value="`${component.mi} kWh`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
             icon="power"
@@ -38,11 +38,11 @@
         </section>
 
         <section class="columns has-text-left">
-            <Card
-              icon="energy"
-              name="PV Energy"
-              :value="`${component.mi} kWh`"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+          <Card
+            icon="battery-status"
+            name="Battery Voltage / CHG Current"
+            :value="`${component.l}`"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
             <Card
               icon="battery"
               name="Depth of Discharge"
