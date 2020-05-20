@@ -8,7 +8,7 @@
                 <h1 class="card-name xheading">
                     {{ name }}
                 </h1>
-                <div class="xheading is-size-4 is-capitalized" v-html="value">
+                <div class="xheading is-size-4" v-html="value">
                 </div>
             </div>
             <!-- <div class="is-size-7">
