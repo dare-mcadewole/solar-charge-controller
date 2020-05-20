@@ -26,9 +26,9 @@
             :value="`${component.cu} kW`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
-            icon="battery"
+            icon="battery-status"
             name="Battery Voltage / CHG Current"
-            :value="`${component.l} kW`"
+            :value="`${component.l}`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
             icon="power"
