@@ -11,9 +11,10 @@
         <h4 class="xheading is-size-5">
           <span>Power-Time Graph</span>
         </h4>
+        
         <section class="columns graph-event">
           <div>
-            <LineGraph />
+            <LineGraph @energy="updateEnergy" />
           </div>
         </section>
       </div>
@@ -127,6 +128,7 @@ export default {
   data () {
     return {
       loading: true,
+      energy: 0,
       component: {
         si: 0,
         e: 0,
@@ -138,6 +140,12 @@ export default {
         bs: 'N/A',
         mi: '-'
       }
+    }
+  },
+
+  methods: {
+    updateEnergy (e) {
+      this.energy = e
     }
   },
 
