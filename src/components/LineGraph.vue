@@ -1,10 +1,10 @@
 <template>
     <div class="line-graph-container">
-        <h3 class="has-text-left is-size-6 has-text-white">
+        <!-- <h3 class="has-text-left is-size-6 has-text-white">
           Energy consumption is <span class="has-text-weight-bold is-size-5">{{
               energy
             }}kWh</span>
-        </h3>
+        </h3> -->
         <div id="line-graph" style="width: 1100px;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
         </div>
     </div>
