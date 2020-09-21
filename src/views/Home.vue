@@ -29,7 +29,7 @@
           <Card
             icon="energy.png"
             name="PV Energy"
-            :value="`${component.mi} kWh`"
+            :value="`${parseFloat(component.mi)/1000} kWh`"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
           <Card
             icon="house.jpg"
